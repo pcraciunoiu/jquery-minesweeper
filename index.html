@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Partly Cloudy - A minesweeper clone</title>
+    <link rel="stylesheet" media="screen,projection,tv" href="css/minesweeper.css" />
+</head>
+<body>
+    <div id="meta" style="display:none">
+        <div id="status">
+            <h2>Game status</h2>
+            <ul>
+                <li id="mines-left">Mines left: <span></span></li>
+                <li id="games-won">Games won: <span></span></li>
+                <li id="games-played">Games played: <span></span></li>
+            </ul>
+        </div>
+        <div id="controls">
+            <h2>Actions</h2>
+            <ul>
+                <li id="new-game">New Game</li>
+                <li id="cheat">Cheat</li>
+            </ul>
+        </div>
+        <div id="instructions">
+            <h2>Instructions</h2>
+            <ul>
+                <li>Left click a tile to reveal what's behind it (careful with mines!)</li>
+                <li>Right click a tile to flag it as hiding a mine. Right click again to unflag.</li>
+                <li>To win, reveal all tiles that are not mines.</li>
+                <li>Click "Cheat" to flag all mine tiles.</li>
+            </ul>
+        </div>
+    </div><!-- /#meta -->
+    <div id="board-wrap">
+        <h1>Partly Cloudy</h1>
+        <div id="board">Please enable JavaScript to play this game.</div>
+        <div id="game-over" style="display:none">
+            <h2>Game Over</h2>
+            <p>To play again, click "New Game" using the actions on the left.</p>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/minesweeper.js"></script>
+</body>
+</html>

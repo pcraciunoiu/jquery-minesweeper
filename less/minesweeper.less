@@ -1,0 +1,98 @@
+body {
+    font-family: @fonts-helvetica;
+    height: 100%;
+    min-width: 980px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#meta {
+    left: 0;
+    padding-left: 10px;
+    position: fixed;
+    width: 380px;
+    top: 5%;
+}
+
+#controls li {
+    cursor: pointer;
+    color: @gradient-base;
+}
+
+#board-wrap {
+    background: #eee;
+    margin-left: 400px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    width: @board-width;
+
+    .tile {
+        .btn-gradient;
+
+        border: 1px solid @gradient-base;
+        color: #fff;
+        cursor: pointer;
+        float: left;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+        &:hover {
+            .btn-gradient-hover;
+            color: #fff;
+        }
+        &:active {
+            .btn-gradient(@gradient-base - 10, @gradient-base - 15);
+        }
+        &.off {
+            .btn-gradient(@gradient-base - 25, @gradient-base - 25);
+        }
+        &.mine {
+            background: @gradient-base - 25 url('thunder.png') no-repeat center;
+        }
+        &.guess {
+            background: @gradient-base url('suspect.png') no-repeat center;
+        }
+    }
+}
+
+#game-over {
+    background: rgba(20, 20, 20, 0.8);
+    color: #fff;
+    height: @board-height;
+    left: 0;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: @board-width;
+
+    > h2 {
+        padding-top: 200px;
+        text-transform: uppercase;
+    }
+}
+
+// Constants, functions
+@board-height: 640px;
+@board-width: 640px;
+@fonts-helvetica: Arial, Helvetica, sans-serif;
+@gradient-base: #001F5C;
+
+.btn-gradient(@first-color: @gradient-base + 10, @second-color: @gradient-base - 10, @percent: 5%) {
+    background: @second-color;
+    background: -moz-linear-gradient(top, @first-color @percent, @second-color 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@percent,@first-color), color-stop(100%,@second-color));
+    background: -webkit-linear-gradient(top, @first-color @percent, @second-color 100%);
+    background: -o-linear-gradient(top, @first-color @percent, @second-color 100%);
+    background: -ms-linear-gradient(top, @first-color @percent, @second-color 100%); /* IE10+ */
+    background: linear-gradient(top, @first-color @percent, @second-color 100%); /* W3C */
+}
+.btn-gradient-hover(@first-color: @gradient-base + 20, @second-color: @gradient-base, @percent: 5%) {
+    background: @second-color;
+    background: -moz-linear-gradient(top, @first-color @percent, @second-color 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@percent,@first-color), color-stop(100%,@second-color));
+    background: -webkit-linear-gradient(top, @first-color @percent, @second-color 100%);
+    background: -o-linear-gradient(top, @first-color @percent, @second-color 100%);
+    background: -ms-linear-gradient(top, @first-color @percent, @second-color 100%); /* IE10+ */
+    background: linear-gradient(top, @first-color @percent, @second-color 100%); /* W3C */
+}
